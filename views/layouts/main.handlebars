@@ -13,22 +13,24 @@
   <div class="flex-column justify-space-around">
     <div class="container container-fluid mt-5">
     <div class="row mb-12 project">
-    <header class="display-flex justify-space-between align-center p-2">
+    <header class="display-flex justify-space-between align-center">
       <nav>
         <a href="/">Home</a>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/profile">Dashboard</a>
+        <a href="/profile" class="m-4">Dashboard</a>
         <button class="no-button" id="logout">Logout</button>
         {{else}}
-        <a href="/login">Login</a>
+        <a href="/login" class="m-4">Login</a>
         {{/if}}
       </nav>
       </div>
       <div class="row mb-12 project">
+        <div class="md-12">
       <h1>
         <a href="/">The Tech Blog</a>
       </h1>
+      </div>
       </div>
       </div>
     </header>

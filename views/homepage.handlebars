@@ -1,14 +1,14 @@
 <!-- Loop over each object in the projects array -->
 {{#each projects as |project| }}
 <div class="row mb-12 project card">
-  <div class="col-md-6 bg-dark">
+  <div class="col-md-6 bg-primary">
     <h2>
       <!-- Call helper function with triple brackets to render the emoji span as HTML -->
       <a href="/project/{{project.id}}">{{project.name}}</a>
     </h2>
     
   </div>
-  <div class="col-md-6 text-right bg-dark text-link">
+  <div class="col-md-6 text-right bg-primary text-link">
     <p>Posted by {{project.user.name}} on {{format_date project.date_created}}</p>
   </div>
   <div class="col-md-12">
