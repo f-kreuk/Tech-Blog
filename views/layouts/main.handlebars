@@ -11,36 +11,41 @@
 
 <body>
   <div class="flex-column justify-space-around">
-    <div class="container container-fluid mt-5">
-    <div class="row mb-12 project">
-    <header class="display-flex justify-space-between align-center">
-      <nav>
-        <a href="/">Home</a>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile" class="m-4">Dashboard</a>
-        <button class="no-button" id="logout">Logout</button>
-        {{else}}
-        <a href="/login" class="m-4">Login</a>
-        {{/if}}
-      </nav>
+    <div class="bg-dark">
+      <div class="container container-fluid mt-5">
+        <div class="row mb-12 project">
+          <header class="display-flex justify-space-between align-center">
+            <nav>
+              <a href="/">Home</a>
+              <!-- Conditionally render login or logout links -->
+              {{#if logged_in}}
+              <a href="/profile" class="m-4">Dashboard</a>
+              <button class="no-button text-link" id="logout">Logout</button>
+              {{else}}
+              <a href="/login" class="m-4">Login</a>
+              {{/if}}
+            </nav>
+        </div>
+        <div class="row mb-12 project">
+          <div class="md-12">
+            <h1>
+              <h1 href="/">The Tech Blog</h1>
+            </h1>
+          </div>
+        </div>
       </div>
-      <div class="row mb-12 project">
-        <div class="md-12">
-      <h1>
-        <a href="/">The Tech Blog</a>
-      </h1>
-      </div>
-      </div>
-      </div>
+    </div>
     </header>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
+
+    <div class="bg-lightgreen">
+      <main class="container container-fluid mt-5">
+        <!-- Render the sub layout -->
+        {{{ body }}}
+      </main>
+      <footer class="bg-lightgreen">
+
+      </footer>
+    </div>
   </div>
 
   <!-- Render script for logged in users only -->
@@ -50,3 +55,5 @@
 </body>
 
 </html>
+
+<script src="../../public/js/dashboard.js"></script>
