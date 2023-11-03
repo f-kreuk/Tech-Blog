@@ -16,28 +16,22 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 router.put('/:id', withAuth, async (req, res) => {
-  try {
-    const { name, description } = req.body; 
-    const updateData = await Project.update(
-      {
-        name: name, 
-        description: description,
-      },
-      {
-        where: {
-          id: req.params.id,
-        },
-      }
-    );
-
-    if (updateData[0] === 1) {
-      res.status(200).json({ message: 'post updated successfully' });
-    } else {
-      res.status(404).json({ message: 'post not found' });
+  console.log(req.params.id);
+  Project.update(req.body, {
+    where: {
+      id: req.params.id
     }
-  } catch (err) {
-    res.status(500).json(err);
-  }
+  })
+  .then(affectedRows => {
+    if (affectedRows > 0) {
+      res.status(200).end();
+    } else {
+      res.status(404).end();
+    }
+  })
+  .catch(err => {
+    res.status(500).json(err)
+  });
 });
 
 router.delete('/:id', withAuth, async (req, res) => {
