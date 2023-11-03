@@ -15,6 +15,31 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+router.put('/:id', withAuth, async (req, res) => {
+  try {
+    const { name, description } = req.body; 
+    const updateData = await Project.update(
+      {
+        name: name, 
+        description: description,
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    );
+
+    if (updateData[0] === 1) {
+      res.status(200).json({ message: 'post updated successfully' });
+    } else {
+      res.status(404).json({ message: 'post not found' });
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const projectData = await Project.destroy({
