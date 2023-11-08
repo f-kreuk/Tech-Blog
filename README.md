@@ -28,6 +28,7 @@
 
  ![Screenshot](/public/assets/TechBlog.JPG)
 
+ ![DeployedApplication](https://fk-tech-blog-23-ecca2496815e.herokuapp.com/)
 
  ## License
  
