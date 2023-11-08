@@ -29,7 +29,6 @@
  ![Screenshot](/public/assets/TechBlog.JPG)
 
 
- 
  ## License
  
  Licensed under MIT (the 'License'); you may not use this file except in compliance with the License. 
